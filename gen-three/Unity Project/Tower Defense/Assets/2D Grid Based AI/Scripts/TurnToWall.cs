@@ -42,6 +42,7 @@ public class TurnToWall : MonoBehaviour
 			isWall = true;
             isTurret = true;
 			this.GetComponent<Renderer> ().material.color = Color.green;
+            this.gameObject.AddComponent<TurretBehavior>();
 
 
 
@@ -50,6 +51,7 @@ public class TurnToWall : MonoBehaviour
 			isWall = false;
             isTurret = false;
             this.GetComponent<Renderer> ().material.color = Color.white;
+            
 		}
 	}
 

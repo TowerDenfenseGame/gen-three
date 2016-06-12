@@ -90,9 +90,12 @@ public class GameManager : MonoBehaviour
         //"Manhattan etc\nYou can also change the Grid size in the GameManager variables from the inspector", lblStyle);
 
         GUI.Label(new Rect(5f, 120f, 100f, 100f), "Enemy Position:");
-        EnemyAStar enStar = (EnemyAStar)pullPositionFromThisGameObject.GetComponent(typeof(EnemyAStar));
-        Vector2 enPos = enStar.fetchGridPosition();
-        GUI.Label(new Rect(5f, 130f, 100f, 100f), enPos.ToString());
+        if (pullPositionFromThisGameObject != null)
+        {
+            EnemyAStar enStar = (EnemyAStar)pullPositionFromThisGameObject.GetComponent(typeof(EnemyAStar));
+            Vector2 enPos = enStar.fetchGridPosition();
+            GUI.Label(new Rect(5f, 130f, 100f, 100f), enPos.ToString());
+        }
 
 
     }
@@ -124,10 +127,12 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-        pullPositionFromThisGameObject = GameObject.FindGameObjectWithTag("enemy");
-        EnemyAStar enStar = (EnemyAStar)pullPositionFromThisGameObject.GetComponent(typeof(EnemyAStar));
-        Vector2 enPos = enStar.fetchGridPosition();
         
+        pullPositionFromThisGameObject = GameObject.FindGameObjectWithTag("enemy");
+        if(pullPositionFromThisGameObject != null) {
+            EnemyAStar enStar = (EnemyAStar)pullPositionFromThisGameObject.GetComponent(typeof(EnemyAStar));
+            Vector2 enPos = enStar.fetchGridPosition();
+        }
     }
 
 	public void addWall (int x, int y)

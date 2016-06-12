@@ -104,8 +104,9 @@ public class EnemyAStar : MonoBehaviour {
         //endGridPosition = new gridPosition(Game.gridWidth - 1, UnityEngine.Random.Range(0, Game.gridHeight - 1));
 
         // Straight line pathfinding
-        startGridPosition = new gridPosition(0, 0);
-        endGridPosition = new gridPosition(17, 0);
+        int endPos = UnityEngine.Random.Range(0, Game.gridHeight - 1);
+        startGridPosition = new gridPosition(0, endPos);
+        endGridPosition = new gridPosition(17, endPos);
         initializePosition ();
 
 
@@ -114,10 +115,10 @@ public class EnemyAStar : MonoBehaviour {
 
 
 
-		foreach(GameObject g in GameObject.FindGameObjectsWithTag("GridBox"))
-		{
-			g.GetComponent<Renderer>().material.color = Color.white;
-		}
+		//foreach(GameObject g in GameObject.FindGameObjectsWithTag("GridBox"))
+		//{
+		//	g.GetComponent<Renderer>().material.color = Color.white;
+		//}
 
 
 		updatePath();
