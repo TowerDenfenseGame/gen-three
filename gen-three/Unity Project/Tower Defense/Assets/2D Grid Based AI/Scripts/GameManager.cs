@@ -46,9 +46,11 @@ public class GameManager : MonoBehaviour
 
 	//This is what you need to show in the inspector.
 	public static int distance = 0;
+    private Component test;
+    public List<Vector2> enemyPostions = new List<Vector2>();
+    GameObject pullPositionFromThisGameObject;
 
-
-	void Start ()
+    void Start ()
 	{
 		//Generate a grid - nodes according to the specified size
 		grid = new MyPathNode[gridWidth, gridHeight];
@@ -84,9 +86,16 @@ public class GameManager : MonoBehaviour
 			Application.LoadLevel (Application.loadedLevel);
 		}
 
-		GUI.Label (new Rect (5f, 120f, 200f, 200f), "Click on the grid to place a wall/tower.\nYou can change the distance formula of the path to Euclidean, " +
-		"Manhattan etc\nYou can also change the Grid size in the GameManager variables from the inspector", lblStyle);
-	}
+        //GUI.Label (new Rect (5f, 120f, 200f, 200f), "Click on the grid to place a wall/tower.\nYou can change the distance formula of the path to Euclidean, " +
+        //"Manhattan etc\nYou can also change the Grid size in the GameManager variables from the inspector", lblStyle);
+
+        GUI.Label(new Rect(5f, 120f, 100f, 100f), "Enemy Position:");
+        EnemyAStar enStar = (EnemyAStar)pullPositionFromThisGameObject.GetComponent(typeof(EnemyAStar));
+        Vector2 enPos = enStar.fetchGridPosition();
+        GUI.Label(new Rect(5f, 130f, 100f, 100f), enPos.ToString());
+
+
+    }
 
 
 	void createGrid ()
@@ -115,8 +124,11 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-	
-	}
+        pullPositionFromThisGameObject = GameObject.FindGameObjectWithTag("enemy");
+        EnemyAStar enStar = (EnemyAStar)pullPositionFromThisGameObject.GetComponent(typeof(EnemyAStar));
+        Vector2 enPos = enStar.fetchGridPosition();
+        
+    }
 
 	public void addWall (int x, int y)
 	{

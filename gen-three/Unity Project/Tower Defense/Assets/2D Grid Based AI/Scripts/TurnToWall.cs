@@ -13,6 +13,7 @@ public class TurnToWall : MonoBehaviour
 	}
 
 	bool isWall;
+    bool isTurret = false;
 
 	void OnMouseDown ()
 	{
@@ -39,6 +40,7 @@ public class TurnToWall : MonoBehaviour
 		if (!isWall) {
 			Game.addWall (int.Parse (splitter [0]), int.Parse (splitter [1]));
 			isWall = true;
+            isTurret = true;
 			this.GetComponent<Renderer> ().material.color = Color.green;
 
 
@@ -46,7 +48,8 @@ public class TurnToWall : MonoBehaviour
 		} else {
 			Game.removeWall (int.Parse (splitter [0]), int.Parse (splitter [1]));
 			isWall = false;
-			this.GetComponent<Renderer> ().material.color = Color.white;
+            isTurret = false;
+            this.GetComponent<Renderer> ().material.color = Color.white;
 		}
 	}
 

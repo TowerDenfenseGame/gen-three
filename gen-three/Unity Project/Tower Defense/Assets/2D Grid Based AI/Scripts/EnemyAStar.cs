@@ -299,6 +299,10 @@ public class EnemyAStar : MonoBehaviour {
 		return new Vector2(posX,posY);	
 		
 	}
+
+    public Vector2 fetchGridPosition() {
+        return new Vector2(this.currentGridPosition.x, this.currentGridPosition.y);
+    }
 	
 	
 	public void initializePosition()
