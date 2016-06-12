@@ -1,0 +1,17 @@
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/obj/Debug/Assembly-CSharp-firstpass.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/obj/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/UnityEngine.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/UnityEditor.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Mono.Cecil.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Unity.DataContract.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/Craig/Documents/Git/gen-wan/Unity Project/Tower Defense/Temp/bin/Debug/Mono.Cecil.Mdb.dll
