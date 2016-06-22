@@ -40,8 +40,9 @@ public class GameManager : MonoBehaviour
 	public Sprite carBack;
 	public float gridSize;
 	public GUIStyle lblStyle;
+    static public String buildType;
 
-	public static string distanceType;
+    public static string distanceType;
 	
 
 	//This is what you need to show in the inspector.
@@ -85,7 +86,14 @@ public class GameManager : MonoBehaviour
 		if (GUI.Button (new Rect (0f, 60f, 200f, 50f), "Reload")) {
 			Application.LoadLevel (Application.loadedLevel);
 		}
-
+        if (GUI.Button(new Rect(210f, 0f, 200f, 50f), "Wall")) //button to make walls
+        {
+            buildType = "wall";
+        }
+        if (GUI.Button(new Rect(210f, 60f, 200f, 50f), "Turret")) //button to make basic turrets
+        {
+            buildType = "turret";
+        }
         //GUI.Label (new Rect (5f, 120f, 200f, 200f), "Click on the grid to place a wall/tower.\nYou can change the distance formula of the path to Euclidean, " +
         //"Manhattan etc\nYou can also change the Grid size in the GameManager variables from the inspector", lblStyle);
 
