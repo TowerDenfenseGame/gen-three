@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Unity Project/Tower Defense/Assets/SceneTest.unity
+  isLoaded: 1
+  isActive: 1
