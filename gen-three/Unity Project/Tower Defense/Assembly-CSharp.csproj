@@ -52,6 +52,7 @@
      <Compile Include="Assets\2D Grid Based AI\Scripts\SpatialAStar.cs" />
      <Compile Include="Assets\2D Grid Based AI\Scripts\TurnToWall.cs" />
      <Compile Include="Assets\2D Grid Based AI\Scripts\TurretBehavior.cs" />
+     <Compile Include="Assets\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\MoveDestination.cs" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
