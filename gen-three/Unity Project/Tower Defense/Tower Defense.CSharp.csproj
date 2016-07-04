@@ -61,6 +61,12 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Tower Defense.CSharp.Plugins.csproj">
@@ -69,16 +75,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\2D Grid Based AI\Scripts\EnemyAStar.cs" />
-    <Compile Include="Assets\2D Grid Based AI\Scripts\GameManager.cs" />
-    <Compile Include="Assets\2D Grid Based AI\Scripts\MyPathNode.cs" />
-    <Compile Include="Assets\2D Grid Based AI\Scripts\PriorityQueue.cs" />
-    <Compile Include="Assets\2D Grid Based AI\Scripts\SpatialAStar.cs" />
-    <Compile Include="Assets\2D Grid Based AI\Scripts\TurnToWall.cs" />
-    <Compile Include="Assets\2D Grid Based AI\Scripts\TurretBehavior.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\DontDestroy.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\EventSystemChecker.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\Pause.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\PlayMusic.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\QuitApplication.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\SetAudioLevels.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\ShowPanels.cs" />
+    <Compile Include="Assets\Game Jam Menu Template\Scripts\StartOptions.cs" />
+    <Compile Include="Assets\Scripts\EnemyAStar.cs" />
+    <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\MoveDestination.cs" />
+    <Compile Include="Assets\Scripts\MyPathNode.cs" />
+    <Compile Include="Assets\Scripts\PriorityQueue.cs" />
+    <Compile Include="Assets\Scripts\SpatialAStar.cs" />
+    <Compile Include="Assets\Scripts\TurnToWall.cs" />
+    <Compile Include="Assets\Scripts\TurretBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Game Jam Menu Template\GameJamTemplateReadMe.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
   </ItemGroup>
