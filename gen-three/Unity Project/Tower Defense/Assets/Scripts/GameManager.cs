@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour
 	{
 		GameObject nb = (GameObject)GameObject.Instantiate (enemy);
 		nb.SetActive (true);
+
 	}
 
 
