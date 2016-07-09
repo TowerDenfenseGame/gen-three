@@ -99,7 +99,11 @@ public class TurretBehavior : MonoBehaviour {
             this.fire();
             timeLeft = 1.0f;
         }
-
+        if (hasTarget == true)
+        {
+            Vector3 direction = gameObject.transform.position - target.transform.position;
+            gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2 (direction.y, direction.x) * 180 / Mathf.PI), new Vector3(0, 0, 1));
+        }
     }
 
     void OnEnemyDestroyed(GameObject enemy) {

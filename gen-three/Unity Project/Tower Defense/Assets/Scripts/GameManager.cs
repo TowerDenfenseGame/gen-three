@@ -94,6 +94,10 @@ public class GameManager : MonoBehaviour
         {
             buildType = "turret";
         }
+        if (GUI.Button(new Rect(420f, 0f, 200f, 50f), "Bomb")) //button to make basic turrets
+        {
+            buildType = "bomb";
+        }
         //GUI.Label (new Rect (5f, 120f, 200f, 200f), "Click on the grid to place a wall/tower.\nYou can change the distance formula of the path to Euclidean, " +
         //"Manhattan etc\nYou can also change the Grid size in the GameManager variables from the inspector", lblStyle);
 
@@ -129,7 +133,6 @@ public class GameManager : MonoBehaviour
 	{
 		GameObject nb = (GameObject)GameObject.Instantiate (enemy);
 		nb.SetActive (true);
-
 	}
 
 
