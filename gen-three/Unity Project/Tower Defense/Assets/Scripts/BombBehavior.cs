@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
 public class BombBehavior : MonoBehaviour
 {
-
     public List<GameObject> enemiesInRange;
     public GameObject[] enemyArray;
     public List<Vector2> killZone = new List<Vector2>();
@@ -12,13 +10,12 @@ public class BombBehavior : MonoBehaviour
     public GameObject target;
     bool steppedON;
     bool blewup;
-    // Use this for initialization
+
     void Start()
     {
         enemiesInRange = new List<GameObject>();
         SetupKillZone();
     }
-
 
     void SetupKillZone()
     {
@@ -37,11 +34,8 @@ public class BombBehavior : MonoBehaviour
         killZone.Add(new Vector2(x - 1, y - 1));
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-
         enemyArray = GameObject.FindGameObjectsWithTag("enemy");
         //find a target
         EnemyAStar enStar;
@@ -53,6 +47,7 @@ public class BombBehavior : MonoBehaviour
             {
                 steppedON = true;
             }
+
             if (steppedON == true && enPos != triggerZone)
             {
                 foreach (Vector2 fireGrid in killZone)
@@ -65,6 +60,7 @@ public class BombBehavior : MonoBehaviour
                 }
             }
         }
+
         if (blewup == true)
         {
             Destroy(this);
