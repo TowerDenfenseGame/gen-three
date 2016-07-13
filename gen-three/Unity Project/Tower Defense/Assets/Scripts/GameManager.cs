@@ -51,10 +51,10 @@ public class GameManager : MonoBehaviour
 
     void OnGUI()
     {
-        if (GUI.Button(new Rect(0f, 0f, 200f, 50f), "Create Enemy"))
+      /*  if (GUI.Button(new Rect(0f, 0f, 200f, 50f), "Create Enemy"))
         {
             createEnemy();
-        }
+        }*/
         if (GUI.Button(new Rect(0f, 60f, 200f, 50f), "Reload"))
         {
             SceneManager.LoadScene("Main");
