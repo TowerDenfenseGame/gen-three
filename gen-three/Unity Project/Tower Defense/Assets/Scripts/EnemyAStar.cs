@@ -59,9 +59,10 @@ public class EnemyAStar : MonoBehaviour
     {
         myColor = getRandomColor();
         // Straight line pathfinding
-        int endPos = UnityEngine.Random.Range(0, Game.gridHeight - 1);
-        startGridPosition = new gridPosition(0, endPos);
-        endGridPosition = new gridPosition(17, endPos);
+        int startPos = UnityEngine.Random.Range(0, Game.gridHeight - 1);
+        int endPos = (int)fetchGridPosition().y;
+        startGridPosition = new gridPosition(0, startPos);
+        endGridPosition = new gridPosition(17, startPos);
         initializePosition();
         MySolver<MyPathNode, System.Object> aStar = new MySolver<MyPathNode, System.Object>(Game.grid);
         IEnumerable<MyPathNode> path = aStar.Search(new Vector2(startGridPosition.x, startGridPosition.y), new Vector2(endGridPosition.x, endGridPosition.y), null);
@@ -109,7 +110,8 @@ public class EnemyAStar : MonoBehaviour
     // Update is called once per frame
 	void Update()
 	{
-		if (!isMoving)
+        endGridPosition = new gridPosition(17, (int) fetchGridPosition().y);
+        if (!isMoving)
 		{
 			StartCoroutine(move());
 		}
@@ -120,6 +122,7 @@ public class EnemyAStar : MonoBehaviour
 	{
 		if (currentGridPosition.x == endGridPosition.x)
 		{
+            SumScore.SaveHighScore();
 			Time.timeScale = 0;
 		}
 	}
