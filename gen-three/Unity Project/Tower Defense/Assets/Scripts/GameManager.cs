@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GUIStyle lblStyle;
     static public String buildType;
     public static string distanceType;
+	public float credits;
 
     //This is what you need to show in the inspector.
     public static int distance = 0;
@@ -47,38 +48,51 @@ public class GameManager : MonoBehaviour
         createGrid();
         //instantiate enemy object
         createEnemy();
+		print ("Started");
+		credits = 100f;
+
+
     }
 
     void OnGUI()
     {
+
       /*  if (GUI.Button(new Rect(0f, 0f, 200f, 50f), "Create Enemy"))
         {
             createEnemy();
         }*/
-        if (GUI.Button(new Rect(0f, 60f, 200f, 50f), "Reload"))
+
+		//Reload should be replace with a menu
+        if (GUI.Button(new Rect(25f, 10f, 75f, 25f), "Reload"))
         {
             SceneManager.LoadScene("Main");
         }
-        if (GUI.Button(new Rect(210f, 0f, 200f, 50f), "Wall")) //button to make walls
-        {
-            buildType = "wall";
+		//TODO: Add Hotkeys for the build types
+
+		if (GUI.Button(new Rect(25f, 40f, 75f, 25f), "Turret (Q)")) //button to make basic turrets
+		{
+			buildType = "turret";
+		}
+		if (GUI.Button(new Rect(105f, 40f, 75f, 25f), "Wall (W)")) //button to make walls
+        {//this needs to go where we actually build the wall
+				buildType = "wall";
+
         }
-        if (GUI.Button(new Rect(210f, 60f, 200f, 50f), "Turret")) //button to make basic turrets
-        {
-            buildType = "turret";
-        }
-        if (GUI.Button(new Rect(420f, 0f, 200f, 50f), "Bomb")) //button to make basic turrets
+		if (GUI.Button(new Rect(185f, 40f, 75f, 25f), "Bomb (E)")) //button to make basic turrets
         {
             buildType = "bomb";
         }
 
-        GUI.Label(new Rect(5f, 120f, 100f, 100f), "Enemy Position:");
-        if (pullPositionFromThisGameObject != null)
+        //GUI.Label(new Rect(5f, 120f, 100f, 100f), "Enemy Position:");
+        /*if (pullPositionFromThisGameObject != null)
         {
             EnemyAStar enStar = (EnemyAStar)pullPositionFromThisGameObject.GetComponent(typeof(EnemyAStar));
             Vector2 enPos = enStar.fetchGridPosition();
             GUI.Label(new Rect(5f, 130f, 100f, 100f), enPos.ToString());
         }
+        */
+		GUI.Label(new Rect(105f, 10f, 100f, 100f), "Credits:");
+		GUI.Label(new Rect(155f, 10f, 100f, 100f), "$"+ credits.ToString());
     }
 
     void createGrid()
@@ -105,12 +119,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         pullPositionFromThisGameObject = GameObject.FindGameObjectWithTag("enemy");
         if (pullPositionFromThisGameObject != null)
         {
             EnemyAStar enStar = (EnemyAStar)pullPositionFromThisGameObject.GetComponent(typeof(EnemyAStar));
             Vector2 enPos = enStar.fetchGridPosition();
         }
+        */
     }
 
     public void addWall(int x, int y)

@@ -133,18 +133,21 @@ public class TurretBehavior : MonoBehaviour
             {
                 foreach (Vector2 fireGrid in killZone)
                 {
-                    if (fireGrid == enPos)
-                    {
-                        quota = true;
-                        //temporarily we will just reset the hasTarget bool when fire occurs, but later we need to do checks agains enemy health
-                        EnemyHealth targetHP = (EnemyHealth)enemy.GetComponent(typeof(EnemyHealth));
-                        int currentHP = targetHP.blast(10);
-                        if (currentHP <= 0)
-                        {
-                            hasTarget = false;
-                            Destroy(enemy);
-                        }
-                    }
+					if (fireGrid == enPos)
+					{
+						quota = true;
+						//temporarily we will just reset the hasTarget bool when fire occurs, but later we need to do checks agains enemy health
+						EnemyHealth targetHP = (EnemyHealth)enemy.GetComponent(typeof(EnemyHealth));
+						int currentHP = targetHP.blast(10);
+						if (currentHP <= 0)
+						{
+							hasTarget = false;
+							Destroy(enemy);
+							GameObject temp = GameObject.FindGameObjectsWithTag("GameMgr")[0];
+							GameManager gm = (GameManager)temp.GetComponent (typeof(GameManager));
+							gm.credits += 25;
+						}
+					}
                 }
             }
         }
