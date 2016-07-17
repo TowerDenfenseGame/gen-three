@@ -107,13 +107,22 @@ public class EnemyAStar : MonoBehaviour
         return tmpCol;
     }
     // Update is called once per frame
-    void Update()
-    {
-        if (!isMoving)
-        {
-            StartCoroutine(move());
-        }
-    }
+	void Update()
+	{
+		if (!isMoving)
+		{
+			StartCoroutine(move());
+		}
+		GameOver();
+	}
+
+	private void GameOver()
+	{
+		if (currentGridPosition.x == endGridPosition.x)
+		{
+			Time.timeScale = 0;
+		}
+	}
 
     public class gridPosition
     {
