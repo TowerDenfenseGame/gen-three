@@ -8,7 +8,6 @@ public class BombBehavior : MonoBehaviour
     public List<Vector2> killZone = new List<Vector2>();
     public Vector2 triggerZone;
     public GameObject target;
-    bool steppedON;
     bool blewup;
 
     void Start()
@@ -45,17 +44,13 @@ public class BombBehavior : MonoBehaviour
             Vector2 enPos = enStar.fetchGridPosition();
             if (enPos == triggerZone)
             {
-                steppedON = true;
-            }
-
-            if (steppedON == true && enPos != triggerZone)
-            {
                 foreach (Vector2 fireGrid in killZone)
                 { //are they within range
                     if (fireGrid == enPos)
                     {
                         Destroy(enemy);
                         blewup = true;
+                        SumScore.Add(5);
                     }
                 }
             }
@@ -63,6 +58,7 @@ public class BombBehavior : MonoBehaviour
 
         if (blewup == true)
         {
+            this.GetComponent<Renderer>().material.color = Color.white;
             Destroy(this);
         }
     }

@@ -146,6 +146,7 @@ public class TurretBehavior : MonoBehaviour
 							GameObject temp = GameObject.FindGameObjectsWithTag("GameMgr")[0];
 							GameManager gm = (GameManager)temp.GetComponent (typeof(GameManager));
 							gm.credits += 25;
+                            SumScore.Add(5);
 						}
 					}
                 }
