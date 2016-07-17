@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
 		//Reload should be replace with a menu
         if (GUI.Button(new Rect(25f, 10f, 75f, 25f), "Reload"))
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene("Main");
         }
 		//TODO: Add Hotkeys for the build types
