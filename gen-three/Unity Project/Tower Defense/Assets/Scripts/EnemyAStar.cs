@@ -7,7 +7,7 @@ public class EnemyAStar : MonoBehaviour
 {
     public GameManager Game;
     public MyPathNode nextNode;
-    bool gray = false;
+    bool over = false;
     public MyPathNode[,] grid;
     public gridPosition currentGridPosition = new gridPosition();
     public gridPosition startGridPosition = new gridPosition();
@@ -23,6 +23,7 @@ public class EnemyAStar : MonoBehaviour
     private float factor;
     private Color myColor;
     public float moveSpeed;
+	public GameObject GameOverScreen;
 
     public class MySolver<TPathNode, TUserContext> : SettlersEngine.SpatialAStar<TPathNode,
     TUserContext> where TPathNode : SettlersEngine.IPathNode<TUserContext>
@@ -124,6 +125,11 @@ public class EnemyAStar : MonoBehaviour
 		{
             SumScore.SaveHighScore();
 			Time.timeScale = 0;
+			if (!over) {
+				GameObject nb = (GameObject)GameObject.Instantiate (GameOverScreen);
+				nb.SetActive (true);
+				over = !over;
+			}
 		}
 	}
 

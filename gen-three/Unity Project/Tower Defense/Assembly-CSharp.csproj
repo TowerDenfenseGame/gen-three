@@ -66,8 +66,13 @@
      <Compile Include="Assets\Scripts\SpatialAStar.cs" />
      <Compile Include="Assets\Scripts\TurnToWall.cs" />
      <Compile Include="Assets\Scripts\TurretBehavior.cs" />
+     <Compile Include="Assets\sumScore\Example\SumScoreExample.cs" />
+     <Compile Include="Assets\sumScore\Scripts\SumScore.cs" />
+     <Compile Include="Assets\sumScore\Scripts\SumScoreManager.cs" />
+     <None Include="Assets\sumScore\LICENSE.txt" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\sumScore\README.md.txt" />
      <None Include="Assets\Game Jam Menu Template\GameJamTemplateReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

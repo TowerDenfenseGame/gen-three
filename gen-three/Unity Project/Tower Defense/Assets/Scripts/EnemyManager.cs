@@ -54,8 +54,8 @@ public class EnemyManager : MonoBehaviour
 		EnemyAStar eStar = (EnemyAStar)upgraded.GetComponent (typeof(EnemyAStar));
 		EnemyHealth eHealth = (EnemyHealth)upgraded.GetComponent (typeof(EnemyHealth));
 		eStar.moveSpeed = (float) 1.00f * (1.00f + (enemyPower / 3));
-		eHealth.UnitHealth = 50 * (1.00f + (enemyPower / 5));
-		eHealth.FullHealth = 50 * (1.00f + (enemyPower / 5));
+		eHealth.UnitHealth = 45 * (1.00f + (enemyPower / 5));
+		eHealth.FullHealth = 45 * (1.00f + (enemyPower / 5));
 
 		return upgraded;
 	}
