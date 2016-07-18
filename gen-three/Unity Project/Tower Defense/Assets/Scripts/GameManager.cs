@@ -63,23 +63,23 @@ public class GameManager : MonoBehaviour
         }*/
 
 		//Reload should be replace with a menu
-        if (GUI.Button(new Rect(25f, 10f, 75f, 25f), "Reload"))
+        if (GUI.Button(new Rect(20f, 10f, 80f, 25f), "Reload"))
         {
             Time.timeScale = 1;
             SceneManager.LoadScene("Main");
         }
 		//TODO: Add Hotkeys for the build types
 
-		if (GUI.Button(new Rect(25f, 40f, 75f, 25f), "Turret (Q)")) //button to make basic turrets
+		if (GUI.Button(new Rect(20f, 40f, 80f, 25f), "Turret ($25)")) //button to make basic turrets
 		{
 			buildType = "turret";
 		}
-		if (GUI.Button(new Rect(105f, 40f, 75f, 25f), "Wall (W)")) //button to make walls
+		if (GUI.Button(new Rect(105f, 40f, 80f, 25f), "Wall ($10)")) //button to make walls
         {//this needs to go where we actually build the wall
 				buildType = "wall";
 
         }
-		if (GUI.Button(new Rect(185f, 40f, 75f, 25f), "Bomb (E)")) //button to make basic turrets
+		if (GUI.Button(new Rect(190f, 40f, 80f, 25f), "Bomb ($50)")) //button to make basic turrets
         {
             buildType = "bomb";
         }
