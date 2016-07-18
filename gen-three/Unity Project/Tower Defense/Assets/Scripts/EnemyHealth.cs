@@ -2,8 +2,8 @@
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int UnitHealth = 0;
-    public int FullHealth = 0;
+    public float UnitHealth = 50f;
+    public float FullHealth = 50f;
     public LineRenderer bar;
     Vector3[] healthbarTransform = new Vector3[2];
     private float OriginalScale;
@@ -11,8 +11,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Start()
     {
-        UnitHealth = 50;
-        FullHealth = 50;
+		UnitHealth = FullHealth;
         Vector3 thisPos = this.transform.position;
         healthbarTransform[0] = new Vector3(-0.50f, 0.50f); //start of hp bar
         healthbarTransform[1] = new Vector3(0.50f, 0.50f);  //end of hp bar
@@ -41,9 +40,9 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public int blast(int dmg)
+    public float blast(int dmg)
     {
-        UnitHealth = UnitHealth - dmg;
+		UnitHealth = (float)UnitHealth - dmg;
         return UnitHealth;
     }
 }

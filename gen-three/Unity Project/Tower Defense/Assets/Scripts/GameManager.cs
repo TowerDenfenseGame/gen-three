@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
         //instantiate enemy object
         createEnemy();
 		print ("Started");
-		credits = 100f;
+		credits = 125f;
 
 
     }

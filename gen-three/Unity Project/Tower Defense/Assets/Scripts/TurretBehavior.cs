@@ -138,7 +138,7 @@ public class TurretBehavior : MonoBehaviour
 						quota = true;
 						//temporarily we will just reset the hasTarget bool when fire occurs, but later we need to do checks agains enemy health
 						EnemyHealth targetHP = (EnemyHealth)enemy.GetComponent(typeof(EnemyHealth));
-						int currentHP = targetHP.blast(10);
+						float currentHP = targetHP.blast(10);
 						if (currentHP <= 0)
 						{
 							hasTarget = false;

@@ -100,7 +100,6 @@ public class EnemyAStar : MonoBehaviour
             //    //GameObject.Find(node.X + "," + node.Y).GetComponent<Renderer>().material.color = myColor;
             //}
         }
-        endGridPosition = new gridPosition(17, (int)fetchGridPosition().y);
     }
 
     Color getRandomColor()
@@ -111,6 +110,7 @@ public class EnemyAStar : MonoBehaviour
     // Update is called once per frame
 	void Update()
 	{
+        endGridPosition = new gridPosition(17, (int) fetchGridPosition().y);
         if (!isMoving)
 		{
 			StartCoroutine(move());
