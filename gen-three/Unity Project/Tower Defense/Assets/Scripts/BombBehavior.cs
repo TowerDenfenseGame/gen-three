@@ -58,8 +58,9 @@ public class BombBehavior : MonoBehaviour
 
         if (blewup == true)
         {
-            this.GetComponent<Renderer>().material.color = Color.white;
-            Destroy(this);
+            //this.GetComponent<Renderer>().material.color = Color.white;
+			this.GetComponent<TurnToWall> ().removeTile ();
+            //Destroy(this);
         }
     }
 }

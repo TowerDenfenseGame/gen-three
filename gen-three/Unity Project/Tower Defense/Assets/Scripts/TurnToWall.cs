@@ -3,9 +3,12 @@
 public class TurnToWall : MonoBehaviour
 {
     public GameManager Game;
-    bool isWall;
+    public bool isWall;
 	private GameObject temp;
 	private GameManager gm;
+	public Sprite grid;
+	public Sprite bottle;
+	public Sprite yarn;
 
 	public float bombPrice = 50f;
 
@@ -41,7 +44,9 @@ public class TurnToWall : MonoBehaviour
 			if (!isWall) {
 				this.gameObject.AddComponent<BombBehavior> ();
 				isWall = true;
-				this.GetComponent<Renderer> ().material.color = Color.yellow;
+				this.GetComponent<SpriteRenderer> ().sprite = yarn;
+				this.GetComponent<SpriteRenderer> ().color = Color.white;
+				//this.GetComponent<Renderer> ().material.color = Color.yellow;
 				gm.credits = gm.credits - 50f;
 			}
 		} else {
@@ -60,7 +65,7 @@ public class TurnToWall : MonoBehaviour
 			if (!isWall) {
 				Game.addWall (int.Parse (splitter [0]), int.Parse (splitter [1]));
 				isWall = true;
-				this.GetComponent<Renderer> ().material.color = Color.red;
+				this.GetComponent<SpriteRenderer> ().color = Color.red;
 				gm.credits = gm.credits - 10f;
 			}
 		}else {
@@ -79,7 +84,9 @@ public class TurnToWall : MonoBehaviour
 			if (!isWall) {
 				Game.addWall (int.Parse (splitter [0]), int.Parse (splitter [1]));
 				isWall = true;
-				this.GetComponent<Renderer> ().material.color = Color.green;
+				//this.GetComponent<Renderer> ().material.color = Color.green;
+				this.GetComponent<SpriteRenderer> ().sprite = bottle;
+				this.GetComponent<SpriteRenderer> ().color = Color.white;
 				this.gameObject.AddComponent<TurretBehavior> ();
 				gm.credits = gm.credits - 25f;
 			}
@@ -88,14 +95,25 @@ public class TurnToWall : MonoBehaviour
 			print ("No Funds Tried To Call");
 		}
     }
-    void removeTile()
+    public void removeTile()
     {
         string[] splitter = this.gameObject.name.Split(',');
         Game.removeWall(int.Parse(splitter[0]), int.Parse(splitter[1]));
         isWall = false;
-        this.GetComponent<Renderer>().material.color = Color.white;
+		this.GetComponent<SpriteRenderer> ().sprite = grid;
+		//this.GetComponent<SpriteRenderer> ().color = Color.white;
+		Color reset = new Color (1.0f, 1.0f, 1.0f, 0.35f);
+		print (reset.ToString());
+		//this.GetComponent<SpriteRenderer> ().material.color = reset;
+		this.GetComponent<SpriteRenderer> ().color = reset;
+		print (this.GetComponent<SpriteRenderer> ().color.ToString());
+        //this.GetComponent<Renderer>().material.color = Color.white;
         Destroy(this.gameObject.GetComponent<TurretBehavior>());
         Destroy(this.gameObject.GetComponent<BombBehavior>());
+		Destroy(this.gameObject.GetComponent<LineRenderer>());
+		this.gameObject.transform.rotation.Set (0.0f, 0.0f, 0.0f, 0.0f);
+		print (this.GetComponent<SpriteRenderer> ().transform.localRotation.ToString());
+		this.GetComponent<SpriteRenderer> ().transform.localRotation = Quaternion.identity;
     }
 
     void OnMouseOver()

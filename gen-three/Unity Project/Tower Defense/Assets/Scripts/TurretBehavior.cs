@@ -48,6 +48,7 @@ public class TurretBehavior : MonoBehaviour
         //find Target
         if (!hasTarget)
         {
+			
             positions[1] = positions[0];
             line.SetPositions(positions);
             //enumerate enemies
@@ -108,11 +109,12 @@ public class TurretBehavior : MonoBehaviour
             timeLeft = 1.0f;
         }
 
-        if (hasTarget == true)
-        {
-            Vector3 direction = gameObject.transform.position - target.transform.position;
-            gameObject.transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI), new Vector3(0, 0, 1));
-        }
+		if (hasTarget == true) {
+			Vector3 direction = gameObject.transform.position - target.transform.position;
+			gameObject.transform.rotation = Quaternion.AngleAxis ((Mathf.Atan2 (direction.y, direction.x) * 180 / Mathf.PI), new Vector3 (0, 0, 1));
+		} else {
+			this.GetComponent<SpriteRenderer> ().transform.localRotation = Quaternion.identity;
+		}
     }
 
     void OnEnemyDestroyed(GameObject enemy)
