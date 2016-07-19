@@ -65,7 +65,7 @@ public class TurnToWall : MonoBehaviour
 			if (!isWall) {
 				Game.addWall (int.Parse (splitter [0]), int.Parse (splitter [1]));
 				isWall = true;
-				this.GetComponent<SpriteRenderer> ().color = Color.red;
+				this.GetComponent<SpriteRenderer> ().color = Color.gray;
 				gm.credits = gm.credits - 10f;
 			}
 		}else {
